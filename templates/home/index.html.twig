@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des rôles utilisateurs!{% endblock %}
+
+{% block body %}
+
+    <div class="container example-wrapper">
+        {% for label, messages in app.flashes %}
+            <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    <div class="container mt-5"><a href="/logout">se déconnecter</a></div>
+        <h1 class="text-center text-red">Gestion de rôle des utilisateurs! ✅</h1>
+        <h2 class="text-center font-weight-bold">Lingomba SaaS</h2>
+    </div>
+
+
+{# {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %} #}
+
+<script>
+    setTimeout(function() {
+        let alertElement = document.querySelector('.alert');
+        if (alertElement) {
+            alertElement.classList.remove('show');
+            alertElement.classList.add('fade');
+            setTimeout(() => alertElement.remove(), 150); // remove after fade effect
+        }
+    }, 10000); // 5000ms = 5 seconds
+</script>
+
+
+    
+{% endblock %}
